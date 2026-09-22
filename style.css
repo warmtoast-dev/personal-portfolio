@@ -1,19 +1,23 @@
-/* ==================================================
+/* 
+==================================================
    Imports
-================================================== */
+================================================== 
+*/
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
-/* ==================================================
+/* 
+==================================================
    Base Variables & Resets
-================================================== */
+================================================== 
+*/
 
 :root {
     --background: #FAF9F6;
     --text: #1C1C1A;
     --muted: #73736D;
     --line: #DCDAD4;
-  --page-width: 34rem;
+    --page-width: 38rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -53,9 +57,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ==================================================
+/* 
+==================================================
    Page Layout
-================================================== */
+================================================== 
+*/
 
 .page {
   width: min(calc(100% - 48px), var(--page-width));
@@ -63,9 +69,11 @@ body {
   padding: 72px 0 60px;
 }
 
-/* ==================================================
+/* 
+==================================================
    Header
-================================================== */
+================================================== 
+*/
 
 .site-header {
   display: flex;
@@ -83,16 +91,14 @@ body {
 }
 
 .profile-image {
-  width: 60px;
-  height: 60px;
-
+  width: 64px;
+  height: 64px;
   object-fit: cover;
   border-radius: 50%;
 }
 
 .identity-text h1 {
   margin: 0;
-
   font-size: 22px;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -100,7 +106,6 @@ body {
 
 .location {
   margin: 2px 0 0;
-
   color: var(--muted);
   font-size: 13px;
 }
@@ -110,7 +115,6 @@ body {
   flex-direction: column;
   align-items: flex-end;
   gap: 4px;
-
   color: var(--muted);
   font-size: 13px;
   text-align: right;
@@ -135,23 +139,22 @@ a:hover {
   color: var(--text);
 }
 
-/* ==================================================
+/* 
+==================================================
    Sections
-================================================== */
+================================================== 
+*/
 
 .section {
   display: grid;
   grid-template-columns: 110px 1fr;
   gap: 1.25rem;
-
   padding: 2.25rem 0;
-
   border-bottom: 1px solid var(--line);
 }
 
 .section h2 {
   margin: 3px 0 0;
-
   color: var(--muted);
   font-size: 11px;
   font-weight: 700;
@@ -170,9 +173,11 @@ a:hover {
   margin-bottom: 0;
 }
 
-/* ==================================================
+/* 
+==================================================
    Entries (Experience & Work)
-================================================== */
+================================================== 
+*/
 
 .entry {
   margin-bottom: 36px;
@@ -206,12 +211,9 @@ a:hover {
 
 .dates {
   flex-shrink: 0;
-
   margin: 0;
-
   color: var(--muted);
   font-size: 12px;
-
   white-space: nowrap;
 }
 
@@ -229,9 +231,11 @@ li:last-child {
   margin-bottom: 0;
 }
 
-/* ==================================================
+/* 
+==================================================
    Skills
-================================================== */
+================================================== 
+*/
 
 .skills {
   display: flex;
@@ -254,17 +258,48 @@ li:last-child {
   display: none;
 }
 
-/* ==================================================
+
+/* 
+==================================================
+   External Links
+================================================== 
+*/
+.external-link {
+  position: relative;
+}
+
+.external-link::after {
+  content: "↗";
+  position: absolute;
+  left: 100%;
+  top: 0;
+  margin-left: 0.1rem;
+  color: var(--muted);
+  font-size: 0.85em;
+  opacity: 0;
+  transform: translateY(2px);
+  transition:
+    opacity 120ms ease,
+    transform 120ms ease;
+  pointer-events: none;
+}
+
+.external-link:hover::after {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 
+==================================================
    Footer
-================================================== */
+================================================== 
+*/
 
 .site-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   padding-top: 28px;
-
   color: var(--muted);
   font-size: 12px;
 }
@@ -282,9 +317,11 @@ li:last-child {
   color: var(--text);
 }
 
-/* ==================================================
+/* 
+==================================================
    Mobile Responsive Adjustments
-================================================== */
+================================================== 
+*/
 
 @media (max-width: 600px) {
   .page {
@@ -305,7 +342,6 @@ li:last-child {
   .section {
     grid-template-columns: 1fr;
     gap: 12px;
-
     padding: 1.75rem 0;
   }
 
@@ -323,5 +359,133 @@ li:last-child {
     flex-direction: column-reverse;
     align-items: flex-start;
     gap: 16px;
+  }
+}
+
+
+/* print */
+@media print {
+  /* Page */
+  @page {
+    size: A4;
+    margin: 14mm 16mm;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+
+    font-size: 10pt;
+    line-height: 1.35;
+  }
+
+  .page {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Hide things that belong to the website */
+  .profile-image {
+    display: none;
+  }
+
+  .site-footer {
+    display: none;
+  }
+
+  /* Header */
+  .site-header {
+    padding-bottom: 12px;
+    border-bottom: 1px solid #000;
+  }
+
+  .identity {
+    gap: 0;
+  }
+
+  .identity-text h1 {
+    font-size: 20pt;
+  }
+
+  .location {
+    color: #000;
+    font-size: 9pt;
+  }
+
+  .contact {
+    color: #000;
+    font-size: 9pt;
+  }
+
+  /* Sections */
+  .section {
+    grid-template-columns: 85px 1fr;
+    gap: 12px;
+
+    padding: 11px 0;
+
+    border-bottom: 1px solid #ccc;
+  }
+
+  .section h2 {
+    font-size: 8pt;
+    color: #000;
+  }
+
+  /* Entries */
+  .entry {
+    margin-bottom: 18px;
+  }
+
+  .entry-header {
+    margin-bottom: 5px;
+  }
+
+  .entry h3 {
+    font-size: 10.5pt;
+  }
+
+  .role,
+  .dates {
+    color: #000;
+    font-size: 8.5pt;
+  }
+
+  ul {
+    padding-left: 15px;
+  }
+
+  li {
+    margin-bottom: 3px;
+  }
+
+  /* Skills */
+  .skills span {
+    color: #000;
+  }
+
+  .skills span::after {
+    color: #000;
+  }
+
+  /* Links */
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  a[href]::after {
+    content: none !important;
+  }
+
+  /* Prevent awkward page breaks */
+  .entry {
+    break-inside: avoid;
+  }
+
+  .section {
+    break-inside: avoid;
   }
 }

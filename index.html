@@ -3,12 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <title>Keyur Shah</title>
+    <meta name="author" content="Keyur Shah" />
+    <meta property="og:title" content="Keyur Shah" />
+    <meta property="og:url" content="https://keyurshah.net/" />
+    <meta property="og:type" content="website" />
     <meta
-      name="description"
-      content="Keyur Shah — finance operations, technology, writing, and things I'm learning." />
+      property="og:image"
+      content="https://keyurshah.net/linkedin-pfp.JPG" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="canonical" href="https://keyurshah.net/" />
 
+    <meta
+      property="og:description"
+      content="Keyur Shah - Finance operations, technology, writing, and things I'm learning." />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -18,7 +29,6 @@
       <header class="site-header">
         <div class="identity">
           <img src="/linkedin-pfp.JPG" alt="Keyur Shah" class="profile-image" />
-
           <div class="identity-text">
             <h1>KEYUR SHAH</h1>
             <p class="location">Hyderabad, India</p>
@@ -26,12 +36,14 @@
         </div>
 
         <div class="contact">
-          <a href="mailto:keyurshah.work@gmail.com">
+          <a class="external-link" href="mailto:keyurshah.work@gmail.com">
             keyurshah.work@gmail.com
           </a>
 
           <div class="social-links">
-            <a class="outside-links" href="#">LinkedIn</a>
+            <a class="external-link" href="https://www.linkedin.com/in/kyurshah"
+              >LinkedIn</a
+            >
           </div>
         </div>
       </header>
@@ -191,16 +203,24 @@
       <!-- Footer -->
       <footer class="site-footer">
         <div class="footer-links">
-          <a class="outside-links" href="#">LinkedIn</a>
-          <a class="outside-links" href="#">GitHub</a>
-          <a class="outside-links" href="#">Bluesky</a>
-          <a class="outside-links" href="#">Email</a>
+          <a class="external-link" href="https://github.com/warmtoast-dev"
+            >GitHub</a
+          >
+          <a class="external-link" href="https://www.linkedin.com/in/kyurshah"
+            >LinkedIn</a
+          >
+          <a class="external-link" href="mailto:keyurshah.work@gmail.com"
+            >Email</a
+          >
+          <a
+            class="external-link"
+            href="https://drive.google.com/file/d/1tSRClTNk5eQHRfk19iX1xmyEid7lplw9/view?usp=sharing"
+            >Resume</a
+          >
         </div>
 
         <p>© <span id="year">2026</span> Keyur Shah</p>
       </footer>
     </main>
-
-    <script src="script.js"></script>
   </body>
 </html>
